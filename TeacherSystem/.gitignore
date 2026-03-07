@@ -1,0 +1,35 @@
+# 编译产物与运行结果
+*.class
+*.log
+*.ctxt
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+target/
+out/
+build/
+
+# IDE 配置文件 (IntelliJ IDEA)
+.idea/
+*.iml
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+shelf/
+
+# IDE 配置文件 (Eclipse)
+.settings/
+.project
+.classpath
+*.eml
+*.userlibraries
+
+# 操作系统临时文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地环境变量或敏感信息
+.env
+.env.local
