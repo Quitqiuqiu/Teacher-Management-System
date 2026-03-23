@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* 基础背景与容器 */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 标题样式 */
+h1 {
+    color: #2c3e50;
+    font-weight: 700;
+    border-left: 5px solid #0d6efd;
+    padding-left: 15px;
+}
+
+/* 搜索区域 */
+.search-card {
+    background-color: #f1f3f5;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* 表格自定义 */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f2f7ff;
+    transition: 0.3s;
+}
+
+/* 评价内容单元格 */
+.comment-content {
+    max-width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #555;
+}
+
+/* 评分标签动态颜色 */
+.badge-score-5 { background-color: #198754; } /* 极好 - 绿色 */
+.badge-score-4 { background-color: #94d82d; color: #000; } 
+.badge-score-3 { background-color: #fcc419; color: #000; } /* 一般 - 黄色 */
+.badge-score-2 { background-color: #fd7e14; } 
+.badge-score-1 { background-color: #dc3545; } /* 极差 - 红色 */
+
+/* 编辑卡片样式 */
+.edit-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.edit-card .card-header {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* 按钮组间距 */
+.action-buttons .btn {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #a6344f;
+    border-color: #a6344f;
