@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class DBUtil {
     private static final String URL = "jdbc:mysql://localhost:3306/teacher_management?characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASSWORD = "18920041107Lv";
+    private static final String PASSWORD = "*************";
 
     static {
         try {
