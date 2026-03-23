@@ -39,6 +39,9 @@ public class UserDashboardServlet extends HttpServlet {
             }
 
             switch (action) {
+            	case "detail":
+            		showDetail(request, response);
+                    break;
                 case "search":
                     searchTeachers(request, response);
                     break;
@@ -58,7 +61,27 @@ public class UserDashboardServlet extends HttpServlet {
         request.setAttribute("teachers", teachers);
         request.getRequestDispatcher("/JSP/UserDashboard.jsp").forward(request, response);
     }
-
+    
+    //详情
+    private void showDetail(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        String workIdStr = request.getParameter("workId");
+        
+        if (workIdStr != null && !workIdStr.isEmpty()) {
+            int workId = Integer.parseInt(workIdStr);
+            
+            Teacher teacher = adminDAO.searchByWorkId(workId);
+            
+            if (teacher != null) {
+                request.setAttribute("teacher", teacher);
+                request.getRequestDispatcher("/JSP/TeacherDetail.jsp").forward(request, response);
+            } else {
+                response.sendRedirect("userDashboard?action=list&msg=notfound");
+            }
+        } else {
+            response.sendRedirect("userDashboard?action=list");
+        }
+    }
+    
     //搜索
     private void searchTeachers(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         String keyword = request.getParameter("keyword");

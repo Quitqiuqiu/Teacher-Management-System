@@ -1,8 +1,14 @@
 package javaBean;
 
-public class Teacher {
+import java.io.Serializable;
 
-    private int work_id;     // 教师工号
+public class Teacher implements Serializable{
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int work_id;    // 教师工号
     private String name;    // 姓名
     private String gender;  // 性别
     private String school;  // 学院

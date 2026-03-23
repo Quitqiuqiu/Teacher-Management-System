@@ -73,6 +73,17 @@
 			                <td>${teacher.getSchool()}</td>
 			                <td>${teacher.getTitle()}</td>
 			                <td>
+			                    <button type="button" 
+								        class="btn btn-sm btn-info text-white" 
+								        data-bs-toggle="modal" 
+								        data-bs-target="#teacherDetailModal"
+								        data-workid="${teacher.getWork_id()}"
+								        data-name="${teacher.getName()}"
+								        data-gender="${teacher.getGender()}"
+								        data-school="${teacher.getSchool()}"
+								        data-title="${teacher.getTitle()}">
+								    详情
+								</button>
 			                    <a href="admin?action=edit&workId=${teacher.getWork_id()}" class="btn btn-warning btn-sm">修改</a>
 			                    <button class="btn btn-danger btn-sm" onclick="confirmDelete('${teacher.getWork_id()}')">删除</button>
 			                </td>
@@ -80,6 +91,62 @@
 			        </c:forEach>
 		        </tbody>
 		    </table>
+		</div>
+		
+		<!-- 教师详情信息 -->
+		<div class="modal fade" id="teacherDetailModal" tabindex="-1" aria-hidden="true">
+		    <div class="modal-dialog modal-dialog-centered">
+		        <div class="modal-content shadow-lg">
+		            <div class="modal-header bg-info text-white">
+		                <h5 class="modal-title"><i class="bi bi-person-badge"></i> 教师详细资料</h5>
+		                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+		            </div>
+		            <div class="modal-body p-4">
+		                <div class="row align-items-center">
+		                    <div class="col-md-5 d-flex justify-content-center mb-3 mb-md-0">
+		                        <img src="${pageContext.request.contextPath}/images/teacher.png" 
+		                             id="modalImage"
+		                             class="rounded-circle border border-4 border-light shadow" 
+		                             style="width: 140px; height: 140px; object-fit: cover;" 
+		                             alt="教师照片">
+		                    </div>
+		                    <div class="col-md-7">
+		                        <table class="table table-sm table-borderless mb-0">
+		                            <tr>
+		                                <th class="text-muted" width="70">工号:</th>
+		                                <td id="modalWorkId" class="text-dark"></td>
+		                            </tr>
+		                            <tr>
+		                                <th class="text-muted">姓名:</th>
+		                                <td id="modalName"></td>
+		                            </tr>
+		                            <tr>
+		                                <th class="text-muted">性别:</th>
+		                                <td id="modalGender"></td>
+		                            </tr>
+		                            <tr>
+		                                <th class="text-muted">学院:</th>
+		                                <td id="modalSchool"></td>
+		                            </tr>
+		                            <tr>
+		                                <th class="text-muted">职称:</th>
+		                                <td id="modalTitle"></td>
+		                            </tr>
+		                            <tr>
+		                                <th class="text-muted">平均分:</th>
+		                                <td id="modalAverageScore"></td>
+		                            </tr>
+		                        </table>
+		                        
+					            <div class="modal-footer">
+								    <a id="modalRateBtn" class="btn btn-success px-4">去评价</a>
+								    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+								</div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 		
 		<script src="${pageContext.request.contextPath}/JavaScript/Alert.js"></script>
@@ -105,5 +172,8 @@
 		        }
 		    }
 		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+		<script>const contextPath = '${pageContext.request.contextPath}';</script>
+		<script src="${pageContext.request.contextPath}/JavaScript/ShowDetail.js"></script>
 	</body>
 </html>
