@@ -18,3 +18,10 @@
 - jdk21
 - Apache Tomcat v10.1
 - MySQL 8.0
+
+## 运行截图
+![注册&登录](Screenshots/Logister.png)
+![查看教师信息](Screenshots/ViewTeacherProfile.png)
+![筛选教师](Screenshots/Filter.png)
+![评价教师](Screenshots/Comment.png)
+![我的评价](Screenshots/MyComments.png)
